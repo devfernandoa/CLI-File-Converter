@@ -132,33 +132,57 @@ fn write_json(filename: &str, data: &Value) -> io::Result<()> {
 }
 
 fn write_csv(filename: &str, data: &Value) -> io::Result<()> {
+    println!("Dados recebidos para escrever CSV: {:?}", data); // Adiciona depuração
     let mut wtr = csv::WriterBuilder::new()
         .quote_style(csv::QuoteStyle::Always)
         .from_path(filename)?;
-    if let Value::Array(records) = data {
-        for record in records {
-            if let Value::Object(map) = record {
-                let string_fields: Vec<String> = map.values().map(|v| v.as_str().unwrap_or("").to_string()).collect();
-                wtr.write_record(&string_fields).map_err(|e| io::Error::new(io::ErrorKind::InvalidData, e))?;
-            }
+
+    let records = match data {
+        Value::Array(records) => records.clone(),
+        Value::Object(_) => vec![data.clone()],
+        _ => return Err(io::Error::new(io::ErrorKind::InvalidData, "Formato de dados inválido")),
+    };
+
+    if let Some(Value::Object(first_record)) = records.first() {
+        let headers: Vec<String> = first_record.keys().cloned().collect();
+        wtr.write_record(&headers).map_err(|e| io::Error::new(io::ErrorKind::InvalidData, e))?;
+    }
+
+    for record in records {
+        if let Value::Object(map) = record {
+            let string_fields: Vec<String> = map.values().map(|v| v.as_str().unwrap_or("").to_string()).collect();
+            wtr.write_record(&string_fields).map_err(|e| io::Error::new(io::ErrorKind::InvalidData, e))?;
         }
     }
+    wtr.flush()?; // Certifique-se de que os dados são realmente escritos no arquivo
     Ok(())
 }
 
 fn write_tsv(filename: &str, data: &Value) -> io::Result<()> {
+    println!("Dados recebidos para escrever TSV: {:?}", data); // Adiciona depuração
     let mut wtr = csv::WriterBuilder::new()
         .delimiter(b'\t')
         .quote_style(csv::QuoteStyle::Always)
         .from_path(filename)?;
-    if let Value::Array(records) = data {
-        for record in records {
-            if let Value::Object(map) = record {
-                let string_fields: Vec<String> = map.values().map(|v| v.as_str().unwrap_or("").to_string()).collect();
-                wtr.write_record(&string_fields).map_err(|e| io::Error::new(io::ErrorKind::InvalidData, e))?;
-            }
+
+    let records = match data {
+        Value::Array(records) => records.clone(),
+        Value::Object(_) => vec![data.clone()],
+        _ => return Err(io::Error::new(io::ErrorKind::InvalidData, "Formato de dados inválido")),
+    };
+
+    if let Some(Value::Object(first_record)) = records.first() {
+        let headers: Vec<String> = first_record.keys().cloned().collect();
+        wtr.write_record(&headers).map_err(|e| io::Error::new(io::ErrorKind::InvalidData, e))?;
+    }
+
+    for record in records {
+        if let Value::Object(map) = record {
+            let string_fields: Vec<String> = map.values().map(|v| v.as_str().unwrap_or("").to_string()).collect();
+            wtr.write_record(&string_fields).map_err(|e| io::Error::new(io::ErrorKind::InvalidData, e))?;
         }
     }
+    wtr.flush()?; // Certifique-se de que os dados são realmente escritos no arquivo
     Ok(())
 }
 
