@@ -1,0 +1,11 @@
+/home/fernando/Documents/CLI-File-Converter/target/debug/deps/libxmlparser-2f6e8a2cbe3d7d87.rmeta: /home/fernando/.cargo/registry/src/index.crates.io-6f17d22bba15001f/xmlparser-0.13.6/src/lib.rs /home/fernando/.cargo/registry/src/index.crates.io-6f17d22bba15001f/xmlparser-0.13.6/src/error.rs /home/fernando/.cargo/registry/src/index.crates.io-6f17d22bba15001f/xmlparser-0.13.6/src/stream.rs /home/fernando/.cargo/registry/src/index.crates.io-6f17d22bba15001f/xmlparser-0.13.6/src/strspan.rs /home/fernando/.cargo/registry/src/index.crates.io-6f17d22bba15001f/xmlparser-0.13.6/src/xmlchar.rs
+
+/home/fernando/Documents/CLI-File-Converter/target/debug/deps/libxmlparser-2f6e8a2cbe3d7d87.rlib: /home/fernando/.cargo/registry/src/index.crates.io-6f17d22bba15001f/xmlparser-0.13.6/src/lib.rs /home/fernando/.cargo/registry/src/index.crates.io-6f17d22bba15001f/xmlparser-0.13.6/src/error.rs /home/fernando/.cargo/registry/src/index.crates.io-6f17d22bba15001f/xmlparser-0.13.6/src/stream.rs /home/fernando/.cargo/registry/src/index.crates.io-6f17d22bba15001f/xmlparser-0.13.6/src/strspan.rs /home/fernando/.cargo/registry/src/index.crates.io-6f17d22bba15001f/xmlparser-0.13.6/src/xmlchar.rs
+
+/home/fernando/Documents/CLI-File-Converter/target/debug/deps/xmlparser-2f6e8a2cbe3d7d87.d: /home/fernando/.cargo/registry/src/index.crates.io-6f17d22bba15001f/xmlparser-0.13.6/src/lib.rs /home/fernando/.cargo/registry/src/index.crates.io-6f17d22bba15001f/xmlparser-0.13.6/src/error.rs /home/fernando/.cargo/registry/src/index.crates.io-6f17d22bba15001f/xmlparser-0.13.6/src/stream.rs /home/fernando/.cargo/registry/src/index.crates.io-6f17d22bba15001f/xmlparser-0.13.6/src/strspan.rs /home/fernando/.cargo/registry/src/index.crates.io-6f17d22bba15001f/xmlparser-0.13.6/src/xmlchar.rs
+
+/home/fernando/.cargo/registry/src/index.crates.io-6f17d22bba15001f/xmlparser-0.13.6/src/lib.rs:
+/home/fernando/.cargo/registry/src/index.crates.io-6f17d22bba15001f/xmlparser-0.13.6/src/error.rs:
+/home/fernando/.cargo/registry/src/index.crates.io-6f17d22bba15001f/xmlparser-0.13.6/src/stream.rs:
+/home/fernando/.cargo/registry/src/index.crates.io-6f17d22bba15001f/xmlparser-0.13.6/src/strspan.rs:
+/home/fernando/.cargo/registry/src/index.crates.io-6f17d22bba15001f/xmlparser-0.13.6/src/xmlchar.rs:
